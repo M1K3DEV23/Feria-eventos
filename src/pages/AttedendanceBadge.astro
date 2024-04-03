@@ -1,0 +1,94 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+import { Ferias } from '@data';
+
+const userID = 'abc123';
+const name = 'Victor Hugo';
+const eventID = 'eventID';
+const eventName = Ferias[0].title;
+const registrationDate = new Date().toLocaleString();
+const eventDate = Ferias[0].date;
+const location = Ferias[0].location;
+const tipoEvento = Ferias[0].type;
+
+// Funcion para generar el codigo QR
+function generateQRCode(userID: string, eventID: string) {
+  return `https://api.qrserver.com/v1/create-qr-code/?data=${userID}-${eventID}&size=200x200`;
+}
+---
+
+<Layout title="Badge">
+  <div class="badge-container">
+    <h2>Gafete de Asistencia de {name}</h2>
+    <div class="badge">
+      <div class="badge-content">
+        <div class="badge-header">
+          <h3>{eventName}</h3>
+          <p>Fecha del evento: {eventDate}</p>
+          <p>Fecha de registro al evento: {registrationDate}</p>
+          <p>Lugar del evento: {location}</p>
+          <p>Tipo de evento: {tipoEvento}</p>
+        </div>
+        <figure class="qr-code">
+          <img src={generateQRCode(userID, eventID)} alt="QR Code" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .badge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 2rem;
+  }
+
+  .badge-container h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: bolder;
+  }
+
+  .badge {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .badge-header {
+    margin-bottom: 2rem;
+  }
+
+  .badge-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .badge-header p {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .qr-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .qr-code img {
+    max-width: 200px;
+    height: auto;
+  }
+</style>

@@ -1,0 +1,87 @@
+<header>
+  <nav>
+    <div class="logo">
+      <a href="/">Tu LOGO</a>
+    </div>
+    <div class="menu-toggle">
+      <button aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger">
+          <i class="ri-menu-line"></i>
+          <i class="ri-close-line" style="display: none;"></i>
+        </span>
+      </button>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/register">Registrarse</a></li>
+        <li><a href="/login">Iniciar Sesión</a></li>
+        <li><a href="/jobFairs">Eventos Disponibles</a></li>
+        <li><a href="/AttedendanceBadge">Gafete de Asistencia</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .menu ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Estilos para pantallas más pequeñas */
+  @media screen and (max-width: 768px) {
+    .menu {
+      display: none;
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+    }
+
+    .menu.show {
+      display: block;
+    }
+
+    .menu ul {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle') as HTMLButtonElement;
+  const menu = document.querySelector('.menu') as HTMLDivElement;
+  const menuIcon = document.querySelector('.hamburger') as HTMLElement;
+  const menuLine = menuIcon.querySelector('.ri-menu-line') as HTMLElement;
+  const closeLine = menuIcon.querySelector('.ri-close-line') as HTMLElement;
+
+  // Funcion para abrir y cerrar el menu de navegacion con el boton
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+    menuToggle.setAttribute('aria-expanded', menu.classList.contains('show').toString());
+
+    // Alternar icons
+    menuLine.style.display = menu.classList.contains('show') ? 'none' : 'block';
+    closeLine.style.display = menu.classList.contains('show') ? 'block' : 'none';
+  });
+</script>

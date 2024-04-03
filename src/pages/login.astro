@@ -1,0 +1,119 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Login">
+  <div class="container">
+    <h1>Iniciar Sesión</h1>
+    <form>
+      <div>
+        <label for="curp">CURP:</label>
+        <input type="text" id="curp" name="curp" required />
+      </div>
+      <!-- Terminacion de label y input -->
+      <div>
+        <label for="password">Contraseña:</label>
+        <input type="text" id="password" name="password" required />
+      </div>
+      <!-- Terminacion de label y input -->
+    </form>
+    <div class="button-input">
+      <button type="submit">Iniciar Sesión</button>
+      <p>
+        ¿Olvidaste tu contraseña? <a href="/reset-password">Recuperar Contraseña</a>
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 82vh;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .button-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .button-input button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .button-input p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input {
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button[type='submit'] {
+    padding: 0.5rem 2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button[type='submit']:hover {
+    background-color: #666;
+  }
+
+  a {
+    color: #333;
+    text-decoration: underline;
+    cursor: pointer;
+    transition:
+      color 0.3s ease,
+      text-decoration 0.3s ease-out;
+  }
+
+  a:hover {
+    color: #666;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      max-width: 275px;
+    }
+    form {
+      flex-direction: column;
+    }
+  }
+</style>

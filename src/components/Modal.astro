@@ -1,0 +1,164 @@
+---
+
+---
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>Confirmar registro</h3>
+    <p>¿Estás seguro de que deseas registrarte en esta feria de empleo?</p>
+    <div class="modal-buttons">
+      <button id="confirm-btn">Confirmar</button>
+      <button id="cancel-btn">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Estilos para el modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    position: relative;
+    margin: auto;
+    transform: translateY(50%);
+    top: 15%;
+  }
+  .modal-content h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .modal-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    /* gap: 1rem; */
+    align-items: flex-end;
+    margin-top: 20px;
+  }
+
+  .modal-buttons button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #confirm-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  #cancel-btn {
+    background-color: #f44336;
+    color: white;
+  }
+
+  @keyframes entrarModal {
+    from {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes salirModal {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+  }
+
+  /* Transicion para mostrar el modal */
+  .modal-entrar {
+    animation: entrarModal 0.3s ease-out forwards;
+  }
+
+  /* Transicion para ocultar el modal */
+  .modal-salir {
+    animation: salirModal 0.3s ease-int forwards;
+  }
+
+  /* Estilos para mobiles */
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 90%;
+      padding: 10px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    .modal-buttons button {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  const modal = document.getElementById('modal') as HTMLDivElement;
+  const confirmBtn = document.getElementById('confirm-btn') as HTMLButtonElement;
+  const cancelBtn = document.getElementById('cancel-btn') as HTMLButtonElement;
+  const registerBtns = document.querySelectorAll('.register-btn') as NodeListOf<HTMLButtonElement>;
+
+  registerBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      modal.classList.add('modal-entrar');
+      modal.style.display = 'block';
+    });
+  });
+
+  confirmBtn.addEventListener('click', () => {
+    // Aquí puedes agregar la lógica para redirigir al usuario a la página de registro
+    window.location.href = '/AttedendanceBadge'; // Reemplaza con la ruta correcta
+  });
+
+  cancelBtn.addEventListener('click', () => {
+    modal.classList.add('modal-salir');
+
+    // Esperar a que termine la animación de salida para cerrar el modal
+    setTimeout(() => {
+      modal.style.display = 'none';
+      modal.classList.remove('modal-entrar', 'modal-salir');
+    }, 250); // 300 milisegundos es la duracion de la animacion
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
