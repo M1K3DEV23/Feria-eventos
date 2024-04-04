@@ -29,50 +29,58 @@
   }
 
   .modal-content {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 25%;
+    background-color: #eaeaea;
+    padding: 1rem;
+    border: 1px solid var(--verde-500);
+    width: 35%;
     position: relative;
     margin: auto;
     transform: translateY(50%);
-    top: 15%;
+    top: 10%;
   }
   .modal-content h3 {
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    color: var(--dorado-900);
   }
 
   .modal-content p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
   }
 
   .modal-buttons {
     display: flex;
-    justify-content: space-around;
-    /* gap: 1rem; */
-    align-items: flex-end;
-    margin-top: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
   }
 
   .modal-buttons button {
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
   }
 
   #confirm-btn {
-    background-color: #4caf50;
-    color: white;
+    background-color: var(--verde-500);
+    color: var(--blanco-100);
+    transition: background-color 0.3s ease;
+  }
+  #confirm-btn:hover {
+    background-color: var(--verde-400);
+    color: var(--blanco-100);
   }
 
   #cancel-btn {
-    background-color: #f44336;
-    color: white;
+    background-color: var(--rojo-500);
+    color: var(--blanco-100);
+  }
+  #cancel-btn:hover {
+    background-color: var(--rojo-400);
+    color: var(--blanco-100);
   }
 
   @keyframes entrarModal {
@@ -110,8 +118,8 @@
   /* Estilos para mobiles */
   @media (max-width: 768px) {
     .modal-content {
-      width: 90%;
-      padding: 10px;
+      width: 80%;
+      padding: 1.1rem;
     }
 
     .modal-buttons {
@@ -119,7 +127,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.8rem;
+      gap: 1.2rem;
     }
 
     .modal-buttons button {

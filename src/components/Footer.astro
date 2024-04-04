@@ -1,15 +1,18 @@
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-logo">
-      <a href="/">TU LOGO</a>
+      <a href="/">
+        <img src="/escudoblanco.avif" alt="Escuedo Blanco de del estado de Chiapas" />
+      </a>
     </div>
     <div class="footer-links">
       <h4>Enlaces</h4>
       <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Acerca</a></li>
-        <li><a href="#">Servicio</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/register">Registrarse</a></li>
+        <li><a href="/login">Iniciar Sesión</a></li>
+        <li><a href="/jobFairs">Eventos Disponibles</a></li>
+        <li><a href="/AttedendanceBadge">Gafete de Asistencia</a></li>
       </ul>
     </div>
     <div class="footer-social">
@@ -28,14 +31,14 @@
 
 <style>
   .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 2rem 1rem;
-    position: relative;
+    background-color: var(--verde-700);
+    color: var(--blanco-50);
+    /* paddsing: 1rem 0.5rem; */
+    position: static;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 8.5rem;
+    height: auto;
   }
 
   .footer-container {
@@ -71,7 +74,7 @@
 
   @media screen and (max-width: 768px) {
     .footer {
-      height: 15rem;
+      height: 100vh;
     }
   }
 </style>

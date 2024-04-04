@@ -1,6 +1,7 @@
 {
   "Ferias": [
     {
+      "id": 1,
       "title": "Feria de Empleo Tech",
       "descripcion": "Encuentre oportunidades de carrera en el sector tecnológico.",
       "location": "Tuxtla Gutierrez, Chiapas",
@@ -9,6 +10,7 @@
       "requirements": ["Currículum actualizado", "Portafolio de proyectos"]
     },
     {
+      "id": 2,
       "title": "Expo Empleo Internacional",
       "descripcion": "Conectando talentos con empresas globales.",
       "location": "Tuxtla Gutierrez, Chiapas",
@@ -17,6 +19,7 @@
       "requirements": ["Inglés avanzado", "Experiencia previa"]
     },
     {
+      "id": 3,
       "title": "Feria de Empleo Salud y Bienestar",
       "descripcion": "Oportunidades laborales en el sector de la salud.",
       "location": "Tuxtla Gutierrez, Chiapas",
@@ -25,6 +28,7 @@
       "requirements": ["Título profesional", "Certificaciones"]
     },
     {
+      "id": 4,
       "title": "Feria de Empleo de Hospitalidad",
       "descripcion": "Descubre carreras en hotelería y turismo.",
       "location": "Tuxtla Gutierrez, Chiapas",
@@ -33,6 +37,7 @@
       "requirements": ["Experiencia en servicio al cliente", "Disponibilidad para viajar"]
     },
     {
+      "id": 5,
       "title": "Cumbre de Empleo Financiero",
       "descripcion": "Construye tu futuro en el mundo financiero.",
       "location": "Tuxtla Gutierrez, Chiapas",
@@ -41,6 +46,7 @@
       "requirements": ["Licenciatura en Finanzas", "Conocimientos de análisis de datos"]
     },
     {
+      "id": 6,
       "title": "Feria de Empleo Creativo",
       "descripcion": "Encuentra tu lugar en las industrias creativas.",
       "location": "Tuxtla Gutierrez, Chiapas",

@@ -1,7 +1,9 @@
 <header>
   <nav>
     <div class="logo">
-      <a href="/">Tu LOGO</a>
+      <a href="/">
+        <img src="/escudoblanco.avif" alt="Escuedo Blanco de del estado de Chiapas" />
+      </a>
     </div>
     <div class="menu-toggle">
       <button aria-label="Abrir menu" aria-expanded="false">
@@ -29,6 +31,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    background-color: var(--verde-600);
+    height: 9rem;
   }
 
   .menu ul {
@@ -37,51 +41,108 @@
     gap: 1rem;
   }
 
+  .menu ul li a {
+    text-decoration: none;
+    color: var(--blanco-200);
+    transition:
+      text-decoration 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .menu ul li a:hover {
+    text-decoration: underline;
+    color: var(--dorado-300);
+  }
+
   .menu-toggle {
     display: none;
   }
 
   /* Estilos para pantallas más pequeñas */
-  @media screen and (max-width: 768px) {
-    .menu {
-      display: none;
-      position: absolute;
-      top: 4rem;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
-    }
-
-    .menu.show {
-      display: block;
-    }
-
-    .menu ul {
-      flex-direction: column;
-      padding: 1rem;
+  @media (max-width: 768px) {
+    .logo img {
+      width: 15rem;
     }
 
     .menu-toggle {
       display: block;
     }
+
+    .menu-toggle button {
+      background: var(--dorado-300);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu-toggle .hamburger i {
+      color: var(--blanco-200);
+      background: transparent;
+    }
+
+    .ri-menu-line,
+    .ri-close-line {
+      display: block;
+    }
+
+    .menu:not(.show) .ri-close-line {
+      display: none;
+    }
+
+    .menu.show .ri-menu-line {
+      display: none;
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      top: 9rem;
+      left: 0;
+      width: 100%;
+      background-color: var(--verde-500);
+      box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+      transform: scaleY(0);
+      transform-origin: top;
+      opacity: 0;
+    }
+
+    .menu.show {
+      display: block;
+      transform: scaleY(1);
+      opacity: 1;
+    }
+
+    .menu ul {
+      flex-direction: column;
+      padding: 3rem;
+    }
   }
 </style>
 
 <script>
-  const menuToggle = document.querySelector('.menu-toggle') as HTMLButtonElement;
-  const menu = document.querySelector('.menu') as HTMLDivElement;
-  const menuIcon = document.querySelector('.hamburger') as HTMLElement;
-  const menuLine = menuIcon.querySelector('.ri-menu-line') as HTMLElement;
-  const closeLine = menuIcon.querySelector('.ri-close-line') as HTMLElement;
+  // Script para alternar los íconos del botón hamburguesa
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle button') as HTMLButtonElement;
+    const menu = document.querySelector('.menu') as HTMLDivElement;
+    const menuLine = document.querySelector('.ri-menu-line') as HTMLSpanElement;
+    const closeLine = document.querySelector('.ri-close-line') as HTMLSpanElement;
 
-  // Funcion para abrir y cerrar el menu de navegacion con el boton
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
-    menuToggle.setAttribute('aria-expanded', menu.classList.contains('show').toString());
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+      menuToggle.setAttribute('aria-expanded', menu.classList.contains('show').toString());
 
-    // Alternar icons
-    menuLine.style.display = menu.classList.contains('show') ? 'none' : 'block';
-    closeLine.style.display = menu.classList.contains('show') ? 'block' : 'none';
+      // Alternar la visibilidad de los íconos
+      if (menu.classList.contains('show')) {
+        menuLine.style.display = 'none';
+        closeLine.style.display = 'block';
+      } else {
+        menuLine.style.display = 'block';
+        closeLine.style.display = 'none';
+      }
+    });
   });
 </script>

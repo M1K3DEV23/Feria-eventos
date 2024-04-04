@@ -53,11 +53,13 @@ import { Ferias } from '@data';
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
+    height: auto;
   }
 
   h1 {
     text-align: center;
     font-size: 3.5rem;
+    color: var(--dorado-900);
     margin-bottom: 2rem;
   }
 
@@ -75,8 +77,22 @@ import { Ferias } from '@data';
   .search input {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--verde-400);
     border-radius: 4px;
+  }
+
+  .search input:active {
+    transform: scale(1.01);
+    transition: transform 0.2s ease;
+  }
+
+  .search input:focus {
+    outline: none;
+    border-color: var(--dorado-700);
+    box-shadow: 0 0 2px var(--verde-500);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .job-fairs {
@@ -88,33 +104,32 @@ import { Ferias } from '@data';
   .job-fair {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
-    /* align-items: flex-start; */
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 1rem;
   }
 
   .job-fair h2 {
-    margin-top: 0;
-    margin-bottom: 0.6rem;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
+    color: var(--verde-500);
   }
 
   .job-fair ul {
-    list-style-type: circle;
+    list-style-type: square;
     margin-left: 1rem;
   }
 
   .register-btn {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     display: block;
     width: 100%;
-    padding: 0.5rem;
-    background-color: #333;
-    color: #fff;
+    padding: 1rem;
+    background-color: var(--verde-500);
+    color: var(--blanco-50);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -122,6 +137,6 @@ import { Ferias } from '@data';
   }
 
   .register-btn:hover {
-    background-color: #555;
+    background-color: var(--dorado-700);
   }
 </style>

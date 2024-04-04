@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 ---
 
-<Layout title="Login">
+<Layout title="Iniciar Sesión">
   <div class="container">
     <h1>Iniciar Sesión</h1>
     <form>
@@ -17,11 +17,14 @@ import Layout from '@/layouts/Layout.astro';
       </div>
       <!-- Terminacion de label y input -->
     </form>
-    <div class="button-input">
-      <button type="submit">Iniciar Sesión</button>
-      <p>
-        ¿Olvidaste tu contraseña? <a href="/reset-password">Recuperar Contraseña</a>
-      </p>
+
+    <!-- Boton de submit -->
+    <div class="btn">
+      <button type="submit">Inicia sesión</button>
+    </div>
+    <div class="links">
+      <p>¿Olvidaste tu contraseña? <a href="/reset-password">Recuperala</a></p>
+      <p>¿No tienes cuenta? <a href="/register">Registrate</a></p>
     </div>
   </div>
 </Layout>
@@ -30,60 +33,81 @@ import Layout from '@/layouts/Layout.astro';
   .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    height: 82vh;
+    height: 45rem;
+
   }
 
   h1 {
     text-align: center;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    color: var(--verde-700);
   }
 
   form {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .button-input {
+  form > div {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 1rem;
-  }
-
-  .button-input button {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .button-input p {
-    text-align: center;
-    font-size: 0.9rem;
   }
 
   label {
     font-weight: bold;
+    color: var(--verde-500);
   }
 
-  input {
-    padding: 0.4rem;
-    border: 1px solid #ccc;
+  input{
+    padding: 0.5rem;
+    border: 1px solid var(--verde-400);
     border-radius: 4px;
   }
 
+  input:active {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: var(--dorado-700);
+    box-shadow: 0 0 2px var(--verde-500);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  select:active {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+
+  select:focus {
+    outline: none;
+    border-color: var(--dorado-700);
+    box-shadow: 0 0 2px var(--verde-500);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
   button[type='submit'] {
-    padding: 0.5rem 2rem;
-    background-color: #333;
-    color: #fff;
+    padding: 1rem 4rem;
+    background-color: var(--verde-500);
+    color: var(--blanco-50);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -91,29 +115,69 @@ import Layout from '@/layouts/Layout.astro';
   }
 
   button[type='submit']:hover {
-    background-color: #666;
+    background-color: var(--dorado-700);
   }
 
-  a {
-    color: #333;
-    text-decoration: underline;
-    cursor: pointer;
-    transition:
-      color 0.3s ease,
-      text-decoration 0.3s ease-out;
+  .links {
+    margin-top: 2rem;
+  }
+  .links p {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .links a {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: var(--verde-500);
+    transition: text-decoration 0.3s ease, color 0.3s ease;
   }
 
-  a:hover {
-    color: #666;
+  .links a:hover {
     text-decoration: none;
+    color: var(--dorado-700);
   }
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     .container {
-      max-width: 275px;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 3rem;
     }
+
+    h1 {
+      font-size: 3rem;
+      /* margin-bottom: 0.5rem; */
+    }
+
     form {
+      display: flex;
       flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    form > div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      order: 2
+      width: 100%
+    }
+
+    input, select {
+      order: 1;
+      width: 100%;
+    }
+
+    .button {
+      margin-top: 2rem;
+    }
+
+    button[type='submit'] {
+      padding: 1rem 2rem;
     }
   }
 </style>
