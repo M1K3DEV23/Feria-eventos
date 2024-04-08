@@ -1,10 +1,10 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
-import Modal from '@/components/Modal.astro';
+import Modal from "@/components/Modal.astro";
 
 // Importando los datos
-import { Ferias } from '@data';
+import { Ferias } from "@data";
 ---
 
 <Layout title="Feria de Empleo">
@@ -12,7 +12,7 @@ import { Ferias } from '@data';
     <h1>Feria de Empleo Disponibles</h1>
     <div class="search">
       <span><i class="ri-search-line"></i></span>
-      <input type="text" placeholder="Buscar ferias..." />
+      <input type="search" placeholder="Buscar ferias..." />
     </div>
     <div class="job-fairs">
       {
@@ -106,9 +106,13 @@ import { Ferias } from '@data';
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    border: 1px solid var(--rojo-400);
+    border: 1px solid var(--rojo-200);
     border-radius: 4px;
     padding: 1rem;
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+    overflow: hidden;
   }
 
   .job-fair h2 {
@@ -121,6 +125,11 @@ import { Ferias } from '@data';
   .job-fair ul {
     list-style-type: square;
     margin-left: 1rem;
+  }
+
+  .job-fair:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px var(--dorado-700);
   }
 
   .register-btn {

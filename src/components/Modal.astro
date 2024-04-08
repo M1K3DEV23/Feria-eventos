@@ -7,6 +7,20 @@
   <div class="modal-content">
     <h3>Confirmar registro</h3>
     <p>¿Estás seguro de que deseas registrarte en esta feria de empleo?</p>
+    <!-- Inicio de la mini encuesta -->
+    <div class="survey">
+      <form id="survey-form">
+        <label for="hear-about">Cómo te enteraste?</label>
+        <select id="hear-about" name="hear-about">
+          <option value="1">Recomendación</option>
+          <option value="2">Busqueda en Internet</option>
+          <option value="3">Publicidad en línea</option>
+          <option value="4">Redes sociales</option>
+          <option value="5">Otros</option>
+        </select>
+      </form>
+    </div>
+    <!-- Fin de la mini encuesta -->
     <div class="modal-buttons">
       <button id="confirm-btn">Confirmar</button>
       <button id="cancel-btn">Cancelar</button>
@@ -31,12 +45,17 @@
   .modal-content {
     background-color: #eaeaea;
     padding: 1rem;
-    border: 1px solid var(--verde-500);
+    border: 1px solid var(--rojo-100);
     width: 35%;
     position: relative;
     margin: auto;
     transform: translateY(50%);
     top: 10%;
+    transition: box-shadow 0.35s ease;
+  }
+
+  .modal-content:hover {
+    box-shadow: 0 8px 16px var(--rojo-700);
   }
   .modal-content h3 {
     text-align: center;
@@ -48,6 +67,61 @@
   .modal-content p {
     font-size: 1.2rem;
     text-align: center;
+  }
+
+  .survey {
+    height: 4rem;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  #survey-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  label {
+    font-weight: bold;
+    color: var(--verde-500);
+  }
+
+  input,
+  select {
+    padding: 0.5rem;
+    border: 1px solid var(--verde-400);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input:active {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: var(--dorado-700);
+    box-shadow: 0 0 2px var(--verde-500);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  select:active {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+
+  select:focus {
+    outline: none;
+    border-color: var(--dorado-700);
+    box-shadow: 0 0 2px var(--verde-500);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .modal-buttons {
@@ -137,36 +211,36 @@
 </style>
 
 <script>
-  const modal = document.getElementById('modal') as HTMLDivElement;
-  const confirmBtn = document.getElementById('confirm-btn') as HTMLButtonElement;
-  const cancelBtn = document.getElementById('cancel-btn') as HTMLButtonElement;
-  const registerBtns = document.querySelectorAll('.register-btn') as NodeListOf<HTMLButtonElement>;
+  const modal = document.getElementById("modal") as HTMLDivElement;
+  const confirmBtn = document.getElementById("confirm-btn") as HTMLButtonElement;
+  const cancelBtn = document.getElementById("cancel-btn") as HTMLButtonElement;
+  const registerBtns = document.querySelectorAll(".register-btn") as NodeListOf<HTMLButtonElement>;
 
   registerBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      modal.classList.add('modal-entrar');
-      modal.style.display = 'block';
+    btn.addEventListener("click", () => {
+      modal.classList.add("modal-entrar");
+      modal.style.display = "block";
     });
   });
 
-  confirmBtn.addEventListener('click', () => {
+  confirmBtn.addEventListener("click", () => {
     // Aquí puedes agregar la lógica para redirigir al usuario a la página de registro
-    window.location.href = '/AttedendanceBadge'; // Reemplaza con la ruta correcta
+    window.location.href = "/AttedendanceBadge"; // Reemplaza con la ruta correcta
   });
 
-  cancelBtn.addEventListener('click', () => {
-    modal.classList.add('modal-salir');
+  cancelBtn.addEventListener("click", () => {
+    modal.classList.add("modal-salir");
 
     // Esperar a que termine la animación de salida para cerrar el modal
     setTimeout(() => {
-      modal.style.display = 'none';
-      modal.classList.remove('modal-entrar', 'modal-salir');
+      modal.style.display = "none";
+      modal.classList.remove("modal-entrar", "modal-salir");
     }, 250); // 300 milisegundos es la duracion de la animacion
   });
 
-  window.addEventListener('click', (event) => {
+  window.addEventListener("click", (event) => {
     if (event.target === modal) {
-      modal.style.display = 'none';
+      modal.style.display = "none";
     }
   });
 </script>

@@ -1,7 +1,7 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
-import { Ferias } from '@data';
+import { Ferias } from "@data";
 
 const NombreFeria = Ferias[0].title;
 ---
@@ -32,12 +32,12 @@ const NombreFeria = Ferias[0].title;
 
 <script type="module">
   // Fecha y hora del evento
-  const eventDate = new Date('2024-04-05T00:00:00');
-  const countdownContainer = document.querySelector('.countdown');
-  const daysElement = document.querySelector('#days');
-  const hoursElement = document.querySelector('#hours');
-  const minutesElement = document.querySelector('#minutes');
-  const secondsElement = document.querySelector('#seconds');
+  const eventDate = new Date("2024-04-09T18:00:00");
+  const countdownContainer = document.querySelector(".countdown");
+  const daysElement = document.querySelector("#days");
+  const hoursElement = document.querySelector("#hours");
+  const minutesElement = document.querySelector("#minutes");
+  const secondsElement = document.querySelector("#seconds");
 
   // Función para mostrar el tiempo restante
   function updateCountdown() {
@@ -54,15 +54,15 @@ const NombreFeria = Ferias[0].title;
     }
     // daysElement.textContent = days.toString();
     if (hoursElement) {
-      hoursElement.textContent = hours.toString().padStart(2, '0');
+      hoursElement.textContent = hours.toString().padStart(2, "0");
     }
 
     if (minutesElement) {
-      minutesElement.textContent = minutes.toString().padStart(2, '0');
+      minutesElement.textContent = minutes.toString().padStart(2, "0");
     }
 
     if (secondsElement) {
-      secondsElement.textContent = seconds.toString().padStart(2, '0');
+      secondsElement.textContent = seconds.toString().padStart(2, "0");
     }
     // hoursElement.textContent = hours.toString().padStart(2, '0');
     // minutesElement.textContent = minutes.toString().padStart(2, '0');

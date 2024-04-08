@@ -1,11 +1,11 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
-import { Ferias } from '@data';
+import { Ferias } from "@data";
 
-const userID = 'abc123';
-const name = 'Victor Hugo';
-const eventID = 'eventID';
+const userID = "abc123";
+const name = "Victor Hugo";
+const eventID = "eventID";
 const eventName = Ferias[0].title;
 const registrationDate = new Date().toLocaleString();
 const eventDate = Ferias[0].date;
@@ -64,6 +64,14 @@ function generateQRCode(userID: string, eventID: string) {
     text-align: center;
     max-width: 30rem;
     width: 100%;
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .badge:hover {
+    box-shadow: 0 0 20px var(--dorado-300);
+    transform: translateY(-5px) scale(1.05);
   }
   .badge-header h3 {
     font-size: 2rem;
