@@ -7,7 +7,10 @@
       "location": "Tuxtla Gutierrez, Chiapas",
       "date": "04 de Abril de 2024",
       "type": "Presencial",
-      "requirements": ["Currículum actualizado", "Portafolio de proyectos"]
+      "requirements": [
+        "Currículum actualizado",
+        "Portafolio de proyectos"
+      ]
     },
     {
       "id": 2,
@@ -16,7 +19,10 @@
       "location": "Tuxtla Gutierrez, Chiapas",
       "date": "15 de Mayo de 2024",
       "type": "Virtual",
-      "requirements": ["Inglés avanzado", "Experiencia previa"]
+      "requirements": [
+        "Inglés avanzado",
+        "Experiencia previa"
+      ]
     },
     {
       "id": 3,
@@ -25,7 +31,10 @@
       "location": "Tuxtla Gutierrez, Chiapas",
       "date": "23 de Junio de 2024",
       "type": "Presencial",
-      "requirements": ["Título profesional", "Certificaciones"]
+      "requirements": [
+        "Título profesional",
+        "Certificaciones"
+      ]
     },
     {
       "id": 4,
@@ -34,7 +43,10 @@
       "location": "Tuxtla Gutierrez, Chiapas",
       "date": "10 de Julio de 2024",
       "type": "Presencial",
-      "requirements": ["Experiencia en servicio al cliente", "Disponibilidad para viajar"]
+      "requirements": [
+        "Experiencia en servicio al cliente",
+        "Disponibilidad para viajar"
+      ]
     },
     {
       "id": 5,
@@ -43,7 +55,10 @@
       "location": "Tuxtla Gutierrez, Chiapas",
       "date": "20 de Agosto de 2024",
       "type": "Virtual",
-      "requirements": ["Licenciatura en Finanzas", "Conocimientos de análisis de datos"]
+      "requirements": [
+        "Licenciatura en Finanzas",
+        "Conocimientos de análisis de datos"
+      ]
     },
     {
       "id": 6,
@@ -52,7 +67,70 @@
       "location": "Tuxtla Gutierrez, Chiapas",
       "date": "12 de Septiembre de 2024",
       "type": "Presencial",
-      "requirements": ["Portafolio creativo", "Habilidades de comunicación"]
+      "requirements": [
+        "Portafolio creativo",
+        "Habilidades de comunicación"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Conferencia de Innovación Tecnológica",
+      "descripcion": "Explora las últimas tendencias y avances en tecnología.",
+      "location": "Tuxtla Gutierrez, Chiapas",
+      "date": "5 de Octubre de 2024",
+      "type": "Virtual",
+      "requirements": [
+        "Interés en tecnología",
+        "Inscripción previa"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Expo de Emprendimiento Social",
+      "descripcion": "Descubre cómo el emprendimiento puede impulsar el cambio social.",
+      "location": "Tuxtla Gutierrez, Chiapas",
+      "date": "15 de Noviembre de 2024",
+      "type": "Presencial",
+      "requirements": [
+        "Ideas o proyectos sociales",
+        "Compromiso con el cambio"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Cumbre de Tecnología Médica",
+      "descripcion": "Explora las innovaciones tecnológicas aplicadas al campo de la medicina.",
+      "location": "Tuxtla Gutierrez, Chiapas",
+      "date": "25 de Enero de 2025",
+      "type": "Virtual",
+      "requirements": [
+        "Interés en medicina y tecnología",
+        "Conocimientos básicos de ciencias médicas"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Feria de Empleo Ambiental",
+      "descripcion": "Encuentra oportunidades laborales en el sector ambiental y de sostenibilidad.",
+      "location": "Tuxtla Gutierrez, Chiapas",
+      "date": "10 de Marzo de 2025",
+      "type": "Presencial",
+      "requirements": [
+        "Conciencia ambiental",
+        "Habilidades en ciencias ambientales o afines"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Conferencia de Inteligencia Artificial",
+      "descripcion": "Descubre cómo la inteligencia artificial está transformando diversas industrias.",
+      "location": "Tuxtla Gutierrez, Chiapas",
+      "date": "20 de Abril de 2025",
+      "type": "Virtual",
+      "requirements": [
+        "Interés en inteligencia artificial",
+        "Conocimientos básicos de programación"
+      ]
     }
   ]
 }
