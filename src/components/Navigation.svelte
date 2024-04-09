@@ -32,6 +32,7 @@
         <li><a href="/jobFairs">Eventos</a></li>
         <li><a href="/AttedendanceBadge">Gafete</a></li>
         <li><a href="/EventCountdown">Próximo Evento</a></li>
+        <li><a href="/ListadoEmpresa">Empresas</a></li>
       {/if}
     </ul>
   </nav>

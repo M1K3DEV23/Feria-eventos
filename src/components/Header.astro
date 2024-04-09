@@ -114,27 +114,3 @@ import Navigation from "./Navigation.svelte";
     }
   }
 </style>
-
-<!-- <script>
-    // Script para alternar los íconos del botón hamburguesa
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.querySelector(".menu-toggle button") as HTMLButtonElement;
-      const menu = document.querySelector(".menu") as HTMLDivElement;
-      const menuLine = document.querySelector(".ri-menu-line") as HTMLSpanElement;
-      const closeLine = document.querySelector(".ri-close-line") as HTMLSpanElement;
-
-      menuToggle.addEventListener("click", () => {
-        menu.classList.toggle("show");
-        menuToggle.setAttribute("aria-expanded", menu.classList.contains("show").toString());
-
-        // Alternar la visibilidad de los íconos
-        if (menu.classList.contains("show")) {
-          menuLine.style.display = "none";
-          closeLine.style.display = "block";
-        } else {
-          menuLine.style.display = "block";
-          closeLine.style.display = "none";
-        }
-      });
-    });
-  </script> -->

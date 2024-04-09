@@ -132,5 +132,127 @@
         "Conocimientos básicos de programación"
       ]
     }
+  ],
+  "Empresas": [
+    {
+      "id": 1,
+      "RFC": "ABC123456XYZ",
+      "nombre_empresa": "Tecnologías Avanzadas S.A. de C.V.",
+      "encargado_RH": "Alejandro Gómez"
+    },
+    {
+      "id": 2,
+      "RFC": "DEF789012UVW",
+      "nombre_empresa": "Innovaciones Digitales S.A.P.I. de C.V.",
+      "encargado_RH": "María Rodríguez"
+    },
+    {
+      "id": 3,
+      "RFC": "GHI345678WXY",
+      "nombre_empresa": "Servicios Médicos Integral S.A. de C.V.",
+      "encargado_RH": "Juan Pérez"
+    },
+    {
+      "id": 4,
+      "RFC": "JKL901234ABC",
+      "nombre_empresa": "Hospitalidad y Turismo Internacional S.A. de C.V.",
+      "encargado_RH": "Ana García"
+    },
+    {
+      "id": 5,
+      "RFC": "MNO567890PQR",
+      "nombre_empresa": "Finanzas Globales S.A.P.I. de C.V.",
+      "encargado_RH": "Luis Martínez"
+    },
+    {
+      "id": 6,
+      "RFC": "STU234567FGH",
+      "nombre_empresa": "Consultoría Estratégica Empresarial S.C.",
+      "encargado_RH": "Laura Hernández"
+    },
+    {
+      "id": 7,
+      "RFC": "IJK789012LMN",
+      "nombre_empresa": "Ingeniería y Desarrollo Industrial S.A. de C.V.",
+      "encargado_RH": "Carlos López"
+    },
+    {
+      "id": 8,
+      "RFC": "OPQ345678RST",
+      "nombre_empresa": "BioTech Innovations S.A.P.I. de C.V.",
+      "encargado_RH": "Elena Ramírez"
+    },
+    {
+      "id": 9,
+      "RFC": "UVW901234XYZ",
+      "nombre_empresa": "Comercializadora Internacional de Productos S.A. de C.V.",
+      "encargado_RH": "Javier Vargas"
+    },
+    {
+      "id": 10,
+      "RFC": "YZA567890BCD",
+      "nombre_empresa": "Desarrollos Inmobiliarios del Sureste S.A. de C.V.",
+      "encargado_RH": "Paulina González"
+    },
+    {
+      "id": 11,
+      "RFC": "BCD123456EFG",
+      "nombre_empresa": "Energía Renovable y Sostenibilidad S.A. de C.V.",
+      "encargado_RH": "Roberto Sánchez"
+    },
+    {
+      "id": 12,
+      "RFC": "EFG789012HIJ",
+      "nombre_empresa": "Soluciones Logísticas Integradas S.A. de C.V.",
+      "encargado_RH": "Patricia Mendoza"
+    },
+    {
+      "id": 13,
+      "RFC": "HIJ345678KLM",
+      "nombre_empresa": "Consultoría Legal y Tributaria S.C.",
+      "encargado_RH": "David Castro"
+    },
+    {
+      "id": 14,
+      "RFC": "LMN901234OPQ",
+      "nombre_empresa": "Innovación en Telecomunicaciones S.A. de C.V.",
+      "encargado_RH": "Verónica Díaz"
+    },
+    {
+      "id": 15,
+      "RFC": "OPQ567890RST",
+      "nombre_empresa": "Manufactura Avanzada y Automatización S.A. de C.V.",
+      "encargado_RH": "Francisco Ruiz"
+    },
+    {
+      "id": 16,
+      "RFC": "RST123456UVW",
+      "nombre_empresa": "Desarrollo de Software Innovador S.A. de C.V.",
+      "encargado_RH": "Diana Martínez"
+    },
+    {
+      "id": 17,
+      "RFC": "UVW789012XYZ",
+      "nombre_empresa": "Servicios de Ingeniería Ambiental S.A. de C.V.",
+      "encargado_RH": "Raúl Sánchez"
+    },
+    {
+      "id": 18,
+      "RFC": "XYZ345678ABC",
+      "nombre_empresa": "Consultoría en Marketing Estratégico S.C.",
+      "encargado_RH": "Sofía López"
+    },
+    {
+      "id": 19,
+      "RFC": "ABC901234DEF",
+      "nombre_empresa": "Investigación y Desarrollo Farmacéutico S.A. de C.V.",
+      "encargado_RH": "Mario González"
+    },
+    {
+      "id": 20,
+      "RFC": "DEF567890GHI",
+      "nombre_empresa": "Distribuidora de Productos Orgánicos S.A. de C.V.",
+      "encargado_RH": "Laura Rodríguez"
+    }
   ]
 }
