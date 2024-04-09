@@ -1,3 +1,7 @@
+---
+import Navigation from "./Navigation.svelte";
+---
+
 <header>
   <nav>
     <div class="logo">
@@ -5,24 +9,7 @@
         <img src="/escudoblanco.avif" alt="Escuedo Blanco de del estado de Chiapas" />
       </a>
     </div>
-    <div class="menu-toggle">
-      <button aria-label="Abrir menu" aria-expanded="false">
-        <span class="hamburger">
-          <i class="ri-menu-line"></i>
-          <i class="ri-close-line" style="display: none;"></i>
-        </span>
-      </button>
-    </div>
-    <div class="menu">
-      <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/register">Registrarse</a></li>
-        <li><a href="/login">Iniciar Sesión</a></li>
-        <li><a href="/jobFairs">Eventos</a></li>
-        <li><a href="/AttedendanceBadge">Gafete</a></li>
-        <li><a href="/EventCountdown">Proximo Evento</a></li>
-      </ul>
-    </div>
+    <Navigation client:load />
   </nav>
 </header>
 
@@ -128,26 +115,26 @@
   }
 </style>
 
-<script>
-  // Script para alternar los íconos del botón hamburguesa
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle button") as HTMLButtonElement;
-    const menu = document.querySelector(".menu") as HTMLDivElement;
-    const menuLine = document.querySelector(".ri-menu-line") as HTMLSpanElement;
-    const closeLine = document.querySelector(".ri-close-line") as HTMLSpanElement;
+<!-- <script>
+    // Script para alternar los íconos del botón hamburguesa
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle button") as HTMLButtonElement;
+      const menu = document.querySelector(".menu") as HTMLDivElement;
+      const menuLine = document.querySelector(".ri-menu-line") as HTMLSpanElement;
+      const closeLine = document.querySelector(".ri-close-line") as HTMLSpanElement;
 
-    menuToggle.addEventListener("click", () => {
-      menu.classList.toggle("show");
-      menuToggle.setAttribute("aria-expanded", menu.classList.contains("show").toString());
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("show");
+        menuToggle.setAttribute("aria-expanded", menu.classList.contains("show").toString());
 
-      // Alternar la visibilidad de los íconos
-      if (menu.classList.contains("show")) {
-        menuLine.style.display = "none";
-        closeLine.style.display = "block";
-      } else {
-        menuLine.style.display = "block";
-        closeLine.style.display = "none";
-      }
+        // Alternar la visibilidad de los íconos
+        if (menu.classList.contains("show")) {
+          menuLine.style.display = "none";
+          closeLine.style.display = "block";
+        } else {
+          menuLine.style.display = "block";
+          closeLine.style.display = "none";
+        }
+      });
     });
-  });
-</script>
+  </script> -->
