@@ -1,5 +1,7 @@
 <script lang="ts">
   import { Empresas } from "@data";
+  import DetallesEmpresa from "@/components/DetallesEmpresa.svelte";
+  import { slide } from "svelte/transition";
 
   type Empresa = {
     id: number;
@@ -10,15 +12,21 @@
 
   let busqueda: string = "";
   let filteredEmpresas: Empresa[] = Empresas;
-
   $: filteredEmpresas = Empresas.filter((empresa: Empresa) =>
     empresa.nombre_empresa.toLowerCase().includes(busqueda.toLowerCase())
   );
 
+  // Seleccionar la empresa
   let selectedEmpresa: Empresa | null = null;
+  let mostrarDetalles: boolean = false;
 
   function handleEmpresaSelection(empresa: Empresa) {
     selectedEmpresa = empresa;
+    mostrarDetalles = true;
+  }
+
+  function cerrarDetalles() {
+    mostrarDetalles = false;
   }
 </script>
 
@@ -46,45 +54,48 @@
           <td>{empresa.RFC}</td>
           <td>{empresa.encargado_RH}</td>
           <td
-            ><button type="button" class="btn primary-btn" on:click={() => handleEmpresaSelection(empresa)}
-              >Más información</button
+            ><button on:click={() => handleEmpresaSelection(empresa)} type="button" class="btn primary-btn"
+              >Detalles</button
             ></td
           >
         </tr>
       {/each}
     </tbody>
   </table>
-  <!-- Si le dan click al boton -->
 </div>
+
+{#if mostrarDetalles && selectedEmpresa !== null}
+  <DetallesEmpresa bind:empresa={selectedEmpresa} on:cerrar={cerrarDetalles} />
+{:else if mostrarDetalles && selectedEmpresa === null}
+  <p>Loading...</p>
+{/if}
 
 <style>
   .container {
     max-width: 1024px;
     margin: 0 auto;
-    padding: 2rem;
-    height: auto;
+    /* padding: 0.6rem 1rem; */
   }
 
   h1 {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--dorado-900);
-    margin-bottom: 2rem;
   }
 
   .search {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .search span {
-    margin-right: 0.4rem;
+    margin-right: 0.3rem;
   }
 
   .search span i {
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: var(--dorado-900);
   }
 
@@ -114,6 +125,7 @@
     border-spacing: 0;
     border-collapse: collapse;
     border: 1px solid var(--dorado-300);
+    margin-bottom: 4rem;
   }
 
   th,
@@ -130,11 +142,16 @@
     font-size: 1.1rem;
   }
 
+  td {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
   .btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0.2rem 0.6rem;
+    padding: 1rem 0.8rem;
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
@@ -152,17 +169,17 @@
 
   @media (max-width: 768px) {
     .container {
-      padding: 0.3rem;
-      height: auto;
-      margin: 0 auto;
+      padding: 0rem 0.5rem;
     }
-
     h1 {
       font-size: 2.5rem;
     }
-
     th {
-      font-size: 0.95rem;
+      font-size: 0.7rem;
+    }
+
+    td {
+      font-size: 0.6rem;
     }
   }
 </style>
