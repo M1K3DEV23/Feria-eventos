@@ -1,18 +1,5 @@
 <script>
   let curp;
-  let rfc;
-  let edad;
-  let nombre;
-  let apellidoPaterno;
-  let apellidoMaterno;
-  let genero;
-  let pais;
-  let estado;
-  let cuidad;
-  let direccion;
-  let colonia;
-  let codigoPostal;
-  let telefono;
   let password;
 
   async function handleSubmit(event) {
@@ -20,19 +7,6 @@
 
     const userData = {
       curp,
-      rfc,
-      edad,
-      nombre,
-      apellidoPaterno,
-      apellidoMaterno,
-      genero,
-      pais,
-      estado,
-      cuidad,
-      direccion,
-      colonia,
-      codigoPostal,
-      telefono,
       password
     };
 
@@ -66,77 +40,6 @@
       <label for="curp">CURP:</label>
       <input type="text" id="curp" bind:value={curp} required />
     </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="rfc">RFC:</label>
-      <input type="text" id="rfc" bind:value={rfc} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="edad">Edad:</label>
-      <input type="number" id="edad" bind:value={edad} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" bind:value={nombre} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="apellidoPaterno">Apellido Paterno:</label>
-      <input type="text" id="apellidoPaterno" bind:value={apellidoPaterno} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="apellidoMaterno">Apellido Materno:</label>
-      <input type="text" id="apellidoMaterno" bind:value={apellidoMaterno} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="genero">Género:</label>
-      <select name="genero" id="genero" bind:value={genero} required>
-        <option value="">Selecciona una opción</option>
-        <option value="masculino">Masculino</option>
-        <option value="femenino">Femenino</option>
-        <option value="otro">Otro</option>
-      </select>
-    </div>
-      <!-- Terminación de label y Select -->
-    <div>
-      <label for="pais">Pais:</label>
-      <input type="text" id="pais" bind:value={pais} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="estado">Estado:</label>
-      <input type="text" id="estado" bind:value={estado} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="cuidad">Cuidad:</label>
-      <input type="text" id="cuidad" bind:value={cuidad} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="direccion">Dirección:</label>
-      <input type="text" id="direccion" bind:value={direccion} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="colonia">Colonia:</label>
-      <input type="text" id="colonia" bind:value={colonia} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="codigoPostal">Código Postal:</label>
-      <input type="text" id="codigoPostal" bind:value={codigoPostal} required />
-    </div>
-    <!-- Terminación de label y input -->
-    <div>
-      <label for="telefono">Teléfono:</label>
-      <input type="text" id="telefono" bind:value={telefono} required />
-    </div>
-      <!-- Terminación de label y input -->
     <div>
       <label for="password">Contraseña:</label>
       <input type="text" id="password" bind:value={password} required />
@@ -150,7 +53,7 @@
         <p>¿Ya tienes cuenta? <a href="/login">Inicia sesión</a></p>
         <p>¿Olvidaste tu contraseña? <a href="/reset-password">Recuperala</a><p>
       </div>
-  </form>
+    </form>
 </div>
 
 
