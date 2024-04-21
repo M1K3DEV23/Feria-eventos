@@ -1,17 +1,16 @@
 <script>
   let curp;
   let rfc;
-  let edad;
+  let fechaNacimiento;
   let nombre;
-  let apellidoPaterno;
-  let apellidoMaterno;
-  let genero;
-  let pais;
-  let estado;
-  let cuidad;
-  let direccion;
-  let colonia;
-  let codigoPostal;
+  let paterno;
+  let materino;
+  let sexo;
+  let clave_Estado;
+  let clave_Ciudad;
+  let calle;
+  let clave_Colonia;
+  let cp;
   let telefono;
   let password;
 
@@ -21,17 +20,16 @@
     const userData = {
       curp,
       rfc,
-      edad,
+      fechaNacimiento,
       nombre,
-      apellidoPaterno,
-      apellidoMaterno,
-      genero,
-      pais,
-      estado,
-      cuidad,
-      direccion,
-      colonia,
-      codigoPostal,
+      paterno,
+      materino,
+      sexo,
+      clave_Estado,
+      clave_Ciudad,
+      calle,
+      clave_Colonia,
+      cp,
       telefono,
       password
     };
@@ -50,6 +48,7 @@
 
       if (response.ok) {
         console.log('Registro exitoso');
+        window.location = '/'
       } else {
         console.error('Error en el registro: ', data.error);
       }
@@ -73,28 +72,23 @@
     </div>
       <!-- Terminación de label y input -->
     <div>
-      <label for="edad">Edad:</label>
-      <input type="number" id="edad" bind:value={edad} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
       <label for="nombre">Nombre:</label>
       <input type="text" id="nombre" bind:value={nombre} required />
     </div>
       <!-- Terminación de label y input -->
     <div>
-      <label for="apellidoPaterno">Apellido Paterno:</label>
-      <input type="text" id="apellidoPaterno" bind:value={apellidoPaterno} required />
+      <label for="paterno">Apellido Paterno:</label>
+      <input type="text" id="paterno" bind:value={paterno} required />
     </div>
       <!-- Terminación de label y input -->
     <div>
-      <label for="apellidoMaterno">Apellido Materno:</label>
-      <input type="text" id="apellidoMaterno" bind:value={apellidoMaterno} required />
+      <label for="materino">Apellido Materno:</label>
+      <input type="text" id="materino" bind:value={materino} required />
     </div>
       <!-- Terminación de label y input -->
     <div>
-      <label for="genero">Género:</label>
-      <select name="genero" id="genero" bind:value={genero} required>
+      <label for="sexo">Género:</label>
+      <select name="sexo" id="sexo" bind:value={sexo} required>
         <option value="">Selecciona una opción</option>
         <option value="masculino">Masculino</option>
         <option value="femenino">Femenino</option>
@@ -102,34 +96,30 @@
       </select>
     </div>
       <!-- Terminación de label y Select -->
+      <!-- Terminación de label y input -->
     <div>
-      <label for="pais">Pais:</label>
-      <input type="text" id="pais" bind:value={pais} required />
+      <label for="clave_Estado">clave_Estado:</label>
+      <input type="text" id="clave_Estado" bind:value={clave_Estado} required />
     </div>
       <!-- Terminación de label y input -->
     <div>
-      <label for="estado">Estado:</label>
-      <input type="text" id="estado" bind:value={estado} required />
+      <label for="clave_Ciudad">clave_Ciudad:</label>
+      <input type="text" id="clave_Ciudad" bind:value={clave_Ciudad} required />
     </div>
       <!-- Terminación de label y input -->
     <div>
-      <label for="cuidad">Cuidad:</label>
-      <input type="text" id="cuidad" bind:value={cuidad} required />
+      <label for="calle">Dirección:</label>
+      <input type="text" id="calle" bind:value={calle} required />
     </div>
       <!-- Terminación de label y input -->
     <div>
-      <label for="direccion">Dirección:</label>
-      <input type="text" id="direccion" bind:value={direccion} required />
+      <label for="clave_Colonia">clave_Colonia:</label>
+      <input type="text" id="clave_Colonia" bind:value={clave_Colonia} required />
     </div>
       <!-- Terminación de label y input -->
     <div>
-      <label for="colonia">Colonia:</label>
-      <input type="text" id="colonia" bind:value={colonia} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="codigoPostal">Código Postal:</label>
-      <input type="text" id="codigoPostal" bind:value={codigoPostal} required />
+      <label for="cp">Código Postal:</label>
+      <input type="text" id="cp" bind:value={cp} required />
     </div>
     <!-- Terminación de label y input -->
     <div>
