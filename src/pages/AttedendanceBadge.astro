@@ -12,6 +12,25 @@ const eventDate = Ferias[0].date;
 const location = Ferias[0].location;
 const tipoEvento = Ferias[0].type;
 
+
+let userData= {};
+let eventData= {};
+
+async function getData() {
+  try {
+    const responseUser = await fetch('https://tu-dominio.com/api/user');
+    const responseEvent = await fetch('https://tu-dominio.com/api/user');
+
+    const userDataJSON = await responseUser.json();
+    const eventDataJSON = await responseEvent.json();
+
+    userData = userDataJSON;
+    eventData = eventDataJSON;
+  } catch (error) {
+    console.error('Error al obtener los datos: ', error);
+  }
+}
+
 // Funcion para generar el codigo QR
 function generateQRCode(userID: string, eventID: string) {
   return `https://api.qrserver.com/v1/create-qr-code/?data=${userID}-${eventID}&size=200x200`;

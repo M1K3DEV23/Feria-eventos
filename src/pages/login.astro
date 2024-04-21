@@ -1,11 +1,53 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+
+const form = document.querySelector('#formulario');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+
+  const curpInput = document.querySelector('#curp') as HTMLInputElement;
+  const passwordInput = document.querySelector('#password') as HTMLInputElement;
+
+  const curp = curpInput.value;
+  const password = passwordInput.value;
+
+  const UserData = {
+    curp,
+    password
+  };
+
+  try {
+    const url = 'https://tu-dominio.com/api/login';
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(UserData),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      console.log('Inicio de sesion Exitoso');
+
+      window.location.href = '/';
+    } else {
+      console.error('Error en el inicio de sesion: ', data.error);
+    }
+  } catch (error) {
+    console.error('Error en la solicitud: ', error);
+  }
+});
 ---
 
 <Layout title="Iniciar Sesión">
   <div class="container">
     <h1>Iniciar Sesión</h1>
-    <form>
+    <form id="formulario">
       <div>
         <label for="curp">CURP:</label>
         <input type="text" id="curp" name="curp" required />

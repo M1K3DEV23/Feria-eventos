@@ -1,11 +1,89 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+
+
+
+const form = document.querySelector('#formulario');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+
+  const curpInput = document.querySelector('#curp') as HTMLInputElement;
+  const rfcInput = document.querySelector('#rfc') as HTMLInputElement;
+  const edadInput = document.querySelector('#edad') as HTMLInputElement;
+  const nombreInput = document.querySelector('#nombre') as HTMLInputElement;
+  const apellidoPaternoInput = document.querySelector('#apellidoPaterno') as HTMLInputElement;
+  const apellidoMaternoInput = document.querySelector('#apellidoMaterno') as HTMLInputElement;
+  const generoInput = document.querySelector('#genero') as HTMLSelectElement;
+  const paisInput = document.querySelector('#pais') as HTMLInputElement;
+  const estadoInput = document.querySelector('#estado') as HTMLInputElement;
+  const cuidadInput = document.querySelector('#cuidad') as HTMLInputElement;
+  const direccionInput = document.querySelector('#direccion') as HTMLInputElement;
+  const coloniaInput = document.querySelector('#colonia') as HTMLInputElement;
+  const codigoPostalInput = document.querySelector('#codigoPostal') as HTMLInputElement;
+  const telefonoInput = document.querySelector('#telefono') as HTMLInputElement;
+  const passwordInput = document.querySelector('#password') as HTMLInputElement;
+
+  const curp = curpInput.value;
+  const rfc = rfcInput.value;
+  const edad = edadInput.value;
+  const nombre = nombreInput.value;
+  const apellidoPaterno = apellidoPaternoInput.value;
+  const apellidoMaterno = apellidoMaternoInput.value;
+  const genero = generoInput.value;
+  const pais = paisInput.value;
+  const estado = estadoInput.value;
+  const cuidad = cuidadInput.value;
+  const direccion = direccionInput.value;
+  const colonia = coloniaInput.value;
+  const codigoPostal = codigoPostalInput.value;
+  const telefono = telefonoInput.value;
+  const password = passwordInput.value;
+  const userData = {
+    curp,
+    rfc,
+    edad,
+    nombre,
+    apellidoPaterno,
+    apellidoMaterno,
+    genero,
+    pais,
+    estado,
+    cuidad,
+    direccion,
+    colonia,
+    codigoPostal,
+    telefono,
+    password
+  };
+  const url = 'https://tu-domino.com/api/register';
+  try {
+    const respose = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    })
+
+    const data = await respose.json();
+
+    if (respose.ok) {
+      console.log('Registro exitoso');
+    } else {
+      console.error('Error en el registro: ', data.error);
+    }
+  } catch (error) {
+    console.error('Error en la solicitud: ', error);
+  }
+});
 ---
 
 <Layout title="Registro Usuario">
   <div class="container">
     <h1>Registro</h1>
-    <form>
+    <form id="formulario">
       <div>
         <label for="curp">CURP:</label>
         <input type="text" id="curp" name="curp" required />
