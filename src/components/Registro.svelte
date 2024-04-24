@@ -12,6 +12,7 @@
   let clave_Colonia;
   let cp;
   let telefono;
+  let email;
   let password;
 
   async function handleSubmit(event) {
@@ -31,6 +32,7 @@
       clave_Colonia,
       cp,
       telefono,
+      email,
       password
     };
 
@@ -56,6 +58,30 @@
       console.error('Error en la solicitud: ', error);
     }
   }
+
+  async function getCpData(event) {
+    const cpValue = event.target.value;
+    if (cpValue.length === 5) {
+      try {
+        const response = await fetch('https://tu-domino.com/api/register');
+        const data = await response.json();
+        if (data) {
+          clave_Estado = data.estado;
+          clave_Ciudad = data.clave_Ciudad;
+          calle = data.direccion;
+          clave_Colonia = data.colonia;
+          // Actualizar los campos relacionados
+
+          document.getElementById('clave_Estado').value = clave_Estado;
+          document.getElementById('clave_Ciudad').value = clave_Ciudad;
+          document.getElementById('calle').value = calle;
+          document.getElementById('clave_Estado').value = clave_Estado;
+        }
+      } catch (error) {
+        console.error(`Este es el error: ${error}`);
+      }
+    }
+  }
 </script>
 
 <div class="container">
@@ -63,32 +89,32 @@
   <form on:submit={handleSubmit}>
     <div>
       <label for="curp">CURP:</label>
-      <input type="text" id="curp" bind:value={curp} required />
+      <input type="text" id="curp" bind:value={curp} />
     </div>
       <!-- Terminación de label y input -->
     <div>
       <label for="rfc">RFC:</label>
-      <input type="text" id="rfc" bind:value={rfc} required />
+      <input type="text" id="rfc" bind:value={rfc}  />
     </div>
       <!-- Terminación de label y input -->
     <div>
       <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" bind:value={nombre} required />
+      <input type="text" id="nombre" bind:value={nombre}  />
     </div>
       <!-- Terminación de label y input -->
     <div>
       <label for="paterno">Apellido Paterno:</label>
-      <input type="text" id="paterno" bind:value={paterno} required />
+      <input type="text" id="paterno" bind:value={paterno}  />
     </div>
       <!-- Terminación de label y input -->
     <div>
       <label for="materino">Apellido Materno:</label>
-      <input type="text" id="materino" bind:value={materino} required />
+      <input type="text" id="materino" bind:value={materino}  />
     </div>
       <!-- Terminación de label y input -->
     <div>
       <label for="sexo">Género:</label>
-      <select name="sexo" id="sexo" bind:value={sexo} required>
+      <select name="sexo" id="sexo" bind:value={sexo} >
         <option value="">Selecciona una opción</option>
         <option value="masculino">Masculino</option>
         <option value="femenino">Femenino</option>
@@ -96,40 +122,43 @@
       </select>
     </div>
       <!-- Terminación de label y Select -->
+      <div>
+        <label for="cp">Código Postal:</label>
+        <input type="text" id="cp" bind:value={cp}  on:input={getCpData} />
+      </div>
+      <div>
       <!-- Terminación de label y input -->
-    <div>
-      <label for="clave_Estado">clave_Estado:</label>
-      <input type="text" id="clave_Estado" bind:value={clave_Estado} required />
+      <label for="clave_Estado">Estado:</label>
+      <input type="text" id="clave_Estado" bind:value={clave_Estado}  />
     </div>
       <!-- Terminación de label y input -->
     <div>
-      <label for="clave_Ciudad">clave_Ciudad:</label>
-      <input type="text" id="clave_Ciudad" bind:value={clave_Ciudad} required />
+      <label for="clave_Ciudad">Ciudad:</label>
+      <input type="text" id="clave_Ciudad" bind:value={clave_Ciudad}  />
+    </div>
+      <!-- Terminación de label y input -->
+    <div>
+      <label for="clave_Colonia">Colonia:</label>
+      <input type="text" id="clave_Colonia" bind:value={clave_Colonia} />
     </div>
       <!-- Terminación de label y input -->
     <div>
       <label for="calle">Dirección:</label>
-      <input type="text" id="calle" bind:value={calle} required />
+      <input type="text" id="calle" bind:value={calle}  />
     </div>
       <!-- Terminación de label y input -->
     <div>
-      <label for="clave_Colonia">clave_Colonia:</label>
-      <input type="text" id="clave_Colonia" bind:value={clave_Colonia} required />
-    </div>
-      <!-- Terminación de label y input -->
-    <div>
-      <label for="cp">Código Postal:</label>
-      <input type="text" id="cp" bind:value={cp} required />
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" bind:value={telefono} />
     </div>
     <!-- Terminación de label y input -->
     <div>
-      <label for="telefono">Teléfono:</label>
-      <input type="text" id="telefono" bind:value={telefono} required />
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" bind:value={email} required/>
     </div>
-      <!-- Terminación de label y input -->
-    <div>
+      <div>
       <label for="password">Contraseña:</label>
-      <input type="text" id="password" bind:value={password} required />
+      <input type="password" id="password" bind:value={password} required />
     </div>
       <!-- Terminación de label y input -->
       <!-- Botón de submit -->

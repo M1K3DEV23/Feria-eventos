@@ -1,13 +1,15 @@
 <script lang="ts">
-  let isAuthenticated = true;
+  let isAuthenticated = window.localStorage.getItem('token') !== null;
   let isMenuOpen = false;
 
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
   }
 
-  function isAuthenticatedHandler() {
-    isAuthenticated = !isAuthenticated;
+  function logoutHandler () {
+    window.localStorage.removeItem('token');
+    window.location.href = '/login';
+    isAuthenticated = false;
   }
 </script>
 
@@ -26,9 +28,9 @@
       <li><a href="/">Inicio</a></li>
       {#if !isAuthenticated}
         <li><a href="/register">Registrarse</a></li>
-        <li><a href="/login">Iniciar Sesión</a></li>
+        <!-- <li><a href="/login">Iniciar Sesión</a></li> -->
       {/if}
-      {#if isAuthenticated}
+      {#if window.localStorage.getItem('token') !== null}
         <li><a href="/jobFairs">Eventos</a></li>
         <li><a href="/AttedendanceBadge">Gafete</a></li>
         <li><a href="/EventCountdown">Próximo Evento</a></li>
@@ -36,14 +38,14 @@
       {/if}
     </ul>
   </nav>
-  {#if isAuthenticated}
+  {#if window.localStorage.getItem('token') !== null}
     <div class="btn">
-      <button class="btn-logout" type="button" on:click={() => isAuthenticatedHandler()}>Cerrar Sesión</button>
+      <button class="btn-logout" type="button" on:click={() => logoutHandler}>Cerrar Sesión</button>
     </div>
   {/if}
   {#if !isAuthenticated}
     <div class="btn">
-      <button class="btn-login" type="button" on:click={() => isAuthenticatedHandler()}>Iniciar Sesión</button>
+      <button class="btn-login" type="button" on:click={() => window.location.href = '/login'}>Iniciar Sesión</button>
     </div>
   {/if}
 </div>

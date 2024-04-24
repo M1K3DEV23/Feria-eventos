@@ -19,6 +19,8 @@
 
       if (response.ok) {
         console.log('Inicio de sesión exitoso');
+        const token = data.token; // Obtener el token de autenticacion
+        window.localStorage.setItem('token', token);
         window.location.href = '/';
       } else {
         console.error('Error en el inicio de sesión: ', data.error);
