@@ -30,7 +30,7 @@
         <li><a href="/register">Registrarse</a></li>
         <!-- <li><a href="/login">Iniciar Sesión</a></li> -->
       {/if}
-      {#if window.localStorage.getItem('token') !== null}
+      {#if isAuthenticated}
         <li><a href="/jobFairs">Eventos</a></li>
         <li><a href="/AttedendanceBadge">Gafete</a></li>
         <li><a href="/EventCountdown">Próximo Evento</a></li>
@@ -38,7 +38,7 @@
       {/if}
     </ul>
   </nav>
-  {#if window.localStorage.getItem('token') !== null}
+  {#if isAuthenticated}
     <div class="btn">
       <button class="btn-logout" type="button" on:click={() => logoutHandler}>Cerrar Sesión</button>
     </div>
